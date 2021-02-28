@@ -482,6 +482,13 @@ Windows Example Request:
 
 `curl -s -i -X POST -H "Content-Type: application/json" -d "{\"username\":\"\",\"password\":\"ST123456789\",\"force_sm_off\":false}" https://192.168.xxx.xxx/api/login/Basic`
 
+**Note for Firmware 2.x
+
+The new authentication requires now a different POST data. The following will work. Username has to be fixed to "customer" while you put your login name in "email".
+
+`curl --cacert cacert.pem -s -i -X POST -H "Content-Type: application/json" -d '{"username":"customer","email":"yourmail@domain","password":"ST123456789","force_sm_off":false}' https://powerwall/api/login/Basic`
+
+
 
 ---
 #### _/api/operation_ ####
